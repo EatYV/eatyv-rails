@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   validates :city, :address, presence: true
+  
+  has_many :recipes
 end
