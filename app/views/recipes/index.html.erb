@@ -2,27 +2,18 @@
 
 <h1>Recipes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Recipe</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.recipe %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @recipes.each do |recipe| %>
+  <%= recipe.title %> <br>
+  <%= recipe.recipe %><br>
+  <%= link_to recipe do %>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{recipe.latitude},#{recipe.longitude}&zoom=16&size=400x350&markers=color:blue%7Clabel:EatPoint%7C#{recipe.latitude}%2C#{recipe.longitude}&key=AIzaSyA6nZL7hRFHgoBpO0rayEWSsSNeU2l8-QY" %>
+  <% end %> <br>
+  <%= link_to 'Edit', edit_recipe_path(recipe) %> 
+  <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br>
+  <br>
+  <br>
+<% end %>
 
 <br>
 
