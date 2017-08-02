@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where('created_at >= ?', 120.minutes.ago)
   end
 
   # GET /recipes/1

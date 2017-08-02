@@ -16,6 +16,8 @@
   <%= @recipe.recipe %>
 </p>
 
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@recipe.latitude},#{@recipe.longitude}&zoom=16&size=400x350&markers=color:blue%7Clabel:EatPoint%7C#{@recipe.latitude}%2C#{@recipe.longitude}&key=AIzaSyA6nZL7hRFHgoBpO0rayEWSsSNeU2l8-QY" %>
 
+<br>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
