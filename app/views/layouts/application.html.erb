@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= render '/layouts/nav' %>
+    <br>
+    <br>
+    <br>
     <center>
       <% if flash[:alert] %>
         <br>
@@ -16,17 +20,6 @@
         <br>
       <% end %>
       
-      <% if user_signed_in? %>
-      You are: <%= current_user.email %> <br>
-      <%= current_user.city %> <br>
-      <%= current_user.address %> <br>
-      <%= current_user.zipcode %> <br>
-        <%= link_to 'Settings', edit_user_registration_path %>
-        <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-      <% else %>
-        <%= link_to 'Get Started', new_user_registration_path  %>
-        <%= link_to 'Sign In', new_user_session_path %>
-      <% end %>
       <%= yield %>
     </center>
   </body>
