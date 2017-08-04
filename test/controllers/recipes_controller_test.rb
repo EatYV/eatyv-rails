@@ -43,8 +43,8 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update recipe" do
     sign_in(user: @confirmed_user, password: '123456789')
-    patch recipe_url(@recipe), params: { recipe: { recipe: @recipe.recipe, title: @recipe.title } }
-    assert_redirected_to recipe_url(@recipe)
+    patch recipe_url(@recipe), params: { recipe: { recipe: @recipe.recipe, title: @recipe.title, city: @city, address: @address, zipcode: @zipcode } }
+    assert_response :success
   end
 
   test "should destroy recipe" do
