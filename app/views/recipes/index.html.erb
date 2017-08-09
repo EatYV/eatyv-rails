@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Recipes</h1>
+<%= @user_location_latitude %>
+<%= @user_location_longitude %>
+
 
 <% @recipes.each do |recipe| %>
   <%= recipe.title %> <br>

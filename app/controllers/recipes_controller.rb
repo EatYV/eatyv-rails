@@ -4,7 +4,10 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.where('created_at >= ?', 120.minutes.ago)
+    @user_location_longitude = request.location.longitude
+    @user_location_latitude = request.location.latitude
+    
+    @recipes = Recipe.where('created_at >= ?', 120.minutes.ago).near([@user_location_latitude, @user_location_longitude], 30)
   end
 
   # GET /recipes/1
