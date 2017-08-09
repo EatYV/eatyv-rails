@@ -3,6 +3,8 @@ class Recipe < ApplicationRecord
   
   geocoded_by :full_address
   after_validation :geocode
+  
+  mount_uploader :image, ImageUploader
     
   def full_address
       [city, address, zipcode].join(', ')

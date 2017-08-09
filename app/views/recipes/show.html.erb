@@ -6,6 +6,10 @@
 </p>
 
 <p>
+  <%= image_tag @recipe.image_url(:thumb).to_s %>
+</p>
+
+<p>
   <strong>Location:</strong>
   <%= @recipe.city %>
   <%= @recipe.address %>

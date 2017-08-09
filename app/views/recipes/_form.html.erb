@@ -15,7 +15,13 @@
     <%= form.label :title %>
     <%= form.text_field :title, id: :recipe_title %>
   </div>
-
+  
+  <br>
+  <div class="field">
+    <%= form.file_field :image %>
+  </div>
+  <br>
+  
   <div class="field">
     <%= form.label :recipe %>
     <%= form.text_area :recipe, id: :recipe_recipe %>
