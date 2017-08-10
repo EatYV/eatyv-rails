@@ -1,16 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Recipes</h1>
-
-<% @recipes.each do |recipe| %>
-  <%= recipe.title %> <br>
-  <%= recipe.recipe %><br>
-  <%= link_to recipe do %>
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{recipe.latitude},#{recipe.longitude}&zoom=16&size=400x350&markers=color:blue%7Clabel:EatPoint%7C#{recipe.latitude}%2C#{recipe.longitude}&key=AIzaSyA6nZL7hRFHgoBpO0rayEWSsSNeU2l8-QY" %>
-  <% end %> <br>
-  <%= link_to 'Edit', edit_recipe_path(recipe) %> 
-  <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <br>
-  <br>
-  <br>
-<% end %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVF8xfvLQNzgILChUiBV_2IcDniLRECi0&callback=initMap" async>
+</script>
+<div id='map'></div>

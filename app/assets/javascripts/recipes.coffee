@@ -7,7 +7,7 @@
     lng: 25.61
 
   map = new (google.maps.Map) $('#map')[0],
-    zoom: 10
+    zoom: 16
     center: center
     
   
@@ -20,8 +20,6 @@
         position: latLng
         map: map
         title: data.title
+        url: "/recipes/#{data.id}"
       google.maps.event.addListener marker, 'click', ->
-        infowindow.setOptions
-          content: data.content
-          maxWidth: 300
-        infowindow.open map, marker
+        window.location.href = this.url;
