@@ -9,6 +9,7 @@
   map = new (google.maps.Map) $('#map')[0],
     zoom: 16
     center: center
+    minZoom: 7
     
   
   infowindow = new (google.maps.InfoWindow)
