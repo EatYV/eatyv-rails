@@ -22,5 +22,5 @@
         map: map
         title: data.title
         url: "/recipes/#{data.id}"
-      google.maps.event.addListener marker, 'click', ->
+      google.maps.event.addListener marker, 'mousedown', ->
         window.location.href = this.url;
