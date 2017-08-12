@@ -20,7 +20,9 @@
       marker = new (google.maps.Marker)
         position: latLng
         map: map
+        optimized: false
         title: data.title
         url: "/recipes/#{data.id}"
-      google.maps.event.addListener marker, 'mousedown', ->
+      google.maps.event.addListener marker, 'click', ->
         window.location.href = this.url;
+        
