@@ -11,14 +11,12 @@
 
   <body>
     <%= render '/layouts/nav' %>
-    <br>
-    <br>
     <% if flash[:alert] %>
       <br>
       <p><%= flash[:alert] %></p>
       <br>
     <% end %>
-    
+
     <%= yield %>
   </body>
 </html>

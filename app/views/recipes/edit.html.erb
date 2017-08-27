@@ -1,6 +1,8 @@
-<h1>Editing Recipe</h1>
-<% if current_user == @recipe.user %>
-  <%= render 'form', recipe: @recipe %>
-<% end %>
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>
+<div class="container-fluid text-center">
+  <h1>Editing Recipe</h1>
+  <% if current_user == @recipe.user %>
+    <%= render 'form', recipe: @recipe %>
+  <% end %>
+  <%= link_to 'Show', @recipe %> |
+  <%= link_to 'Back', recipes_path %>
+</div>

@@ -1,33 +1,35 @@
-<%= form_with(model: recipe, local: true) do |form| %>
-  <% if recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+<div class="container-fluid text-center">
+  <%= form_with(model: recipe, local: true) do |form| %>
+    <% if recipe.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-      <ul>
-      <% recipe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :recipe_title %>
+    </div>
+
+    <br>
+    <div class="field">
+      <%= form.file_field :image %>
+    </div>
+    <br>
+
+    <div class="field">
+      <%= form.label :recipe %>
+      <%= form.text_area :recipe, id: :recipe_recipe %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :recipe_title %>
-  </div>
-  
-  <br>
-  <div class="field">
-    <%= form.file_field :image %>
-  </div>
-  <br>
-  
-  <div class="field">
-    <%= form.label :recipe %>
-    <%= form.text_area :recipe, id: :recipe_recipe %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
