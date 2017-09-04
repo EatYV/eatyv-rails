@@ -10,6 +10,7 @@
     zoom: 16
     center: center
     minZoom: 7
+    gestureHandling: 'greedy'
     
   
   infowindow = new (google.maps.InfoWindow)
