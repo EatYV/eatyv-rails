@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     @user_location_longitude = request.location.longitude
     @user_location_latitude = request.location.latitude
     
-    @recipes = Recipe.where('created_at >= ?', 120.minutes.ago)# .near([@user_location_latitude, @user_location_longitude], 30)
+    @recipes = Recipe.where('created_at >= ?', 60.minutes.ago)# .near([@user_location_latitude, @user_location_longitude], 30)
   end
 
   # GET /recipes/1
