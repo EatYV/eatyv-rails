@@ -27,3 +27,7 @@
       google.maps.event.addListener marker, 'click', ->
         window.location.href = this.url;
         
+  if navigator.geolocation
+    navigator.geolocation.getCurrentPosition (position) ->
+    initialLocation = new (google.maps.LatLng)(position.coords.latitude, position.coords.longitude)
+    map.setCenter initialLocation
