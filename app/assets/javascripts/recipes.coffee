@@ -12,9 +12,9 @@
     minZoom: 7
     gestureHandling: 'greedy'
     
-  
   infowindow = new (google.maps.InfoWindow)
 
+    
   $.getJSON '/recipes.json', (jsonData) ->
     $.each jsonData, (key, data) ->
       latLng = new (google.maps.LatLng)(data.lat, data.lng)
@@ -29,5 +29,5 @@
         
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition (position) ->
-    initialLocation = new (google.maps.LatLng)(position.coords.latitude, position.coords.longitude)
-    map.setCenter initialLocation
+      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      map.setCenter initialLocation
