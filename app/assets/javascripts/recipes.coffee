@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 @initMap = ->
   center = 
-    lat: 45.66
+    lat: 45.66,
     lng: 25.61
 
   map = new (google.maps.Map) $('#map')[0],
@@ -26,8 +26,3 @@
         url: "/recipes/#{data.id}"
       google.maps.event.addListener marker, 'click', ->
         window.location.href = this.url;
-        
-  if navigator.geolocation
-    navigator.geolocation.getCurrentPosition (position) ->
-      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-      map.setCenter initialLocation
