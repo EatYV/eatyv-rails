@@ -3,11 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 @initMap = ->
   center = 
-    lat: 45.66,
-    lng: 25.61
+    lat: 43.78,
+    lng: 24.62
 
   map = new (google.maps.Map) $('#map')[0],
-    zoom: 16
+    zoom: 7
     center: center
     minZoom: 7
     gestureHandling: 'greedy'
