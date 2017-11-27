@@ -1,2 +1,0 @@
-class Eatcoin < ApplicationRecord
-end

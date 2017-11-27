@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :eatcoins
   get 'public_website/index'
 
   resources :recipes
