@@ -1,0 +1,2 @@
+module EatcoinsHelper
+end

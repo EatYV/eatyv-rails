@@ -1,0 +1,2 @@
+class Eatcoin < ApplicationRecord
+end
