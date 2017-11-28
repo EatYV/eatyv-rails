@@ -1,5 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = "dygrq6dx9pwjybmx"
+  Braintree::Configuration.public_key = "qpk2hw9f73s5drq8"
+  Braintree::Configuration.private_key = "c6c2da7390488c4a76859d4d1a1dd16e"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
